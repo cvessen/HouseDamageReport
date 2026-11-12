@@ -1,0 +1,33 @@
+<!-- ============================================================
+     Facilitaire melding - Power Pages pagina-template
+     Plaats deze code in een Web Template of op de pagina via
+     Power Pages Studio (code-component / aangepaste HTML).
+
+     Vervang de twee waarden onder in het configuratieblok:
+       supabaseUrl    -> de URL van uw Supabase-project (eindigt op .supabase.co)
+       supabaseAnonKey-> de anonieme (publishable) sleutel van dat project
+     ============================================================ -->
+
+<div id="melding-formulier" class="moonen-report"></div>
+
+<link rel="stylesheet" href="/report-form.css" />
+
+<script src="/data-i18n.js"></script>
+<script src="/data-locations.js"></script>
+<script src="/report-form.js"></script>
+
+<script>
+  (function () {
+    // Configuratie: vul hier uw Supabase-gegevens in.
+    var CONFIG = {
+      supabaseUrl:    'https://UW-PROJECT.supabase.co',
+      supabaseAnonKey: 'UW-ANON-KEY'
+    };
+
+    document.addEventListener('DOMContentLoaded', function () {
+      if (window.MoonenReport) {
+        window.MoonenReport.mount('#melding-formulier', CONFIG);
+      }
+    });
+  })();
+</script>

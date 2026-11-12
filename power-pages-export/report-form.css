@@ -1,0 +1,167 @@
+/* Facilitaire melding - stijlen voor Power Pages
+   Plaats dit bestand als web-bestand (CSS) in Power Pages, of plak de inhoud
+   in een <style> blok op de pagina. Alle klassen beginnen met ppg- zodat ze
+   niet botsen met de stijlen van uw Power Pages-thema. */
+
+.moonen-report {
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  color: #171717;
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.moonen-report * { box-sizing: border-box; }
+
+.ppg-card {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 16px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+  padding: 24px;
+}
+
+/* ---------------------------------------------------------- taalkeuze */
+.ppg-title { font-size: 24px; font-weight: 600; margin: 0 0 8px; text-align: center; }
+.ppg-sub   { font-size: 14px; color: #525252; margin: 0 0 24px; text-align: center; }
+
+.ppg-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+@media (min-width: 640px) { .ppg-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 900px) { .ppg-grid { grid-template-columns: repeat(4, 1fr); } }
+
+.ppg-lang-btn {
+  display: flex; align-items: center; gap: 10px;
+  border: 1px solid #e5e5e5; border-radius: 12px;
+  background: #fff; padding: 12px 14px;
+  font-size: 14px; font-weight: 500; color: #262626;
+  cursor: pointer; text-align: left;
+  transition: border-color .15s, background-color .15s, box-shadow .15s;
+}
+.ppg-lang-btn:hover { border-color: #059669; background: #ecfdf5; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+.ppg-lang-btn:focus { outline: 2px solid rgba(5,150,105,.3); outline-offset: 1px; }
+.ppg-lang-btn img { border-radius: 3px; box-shadow: 0 0 0 1px rgba(0,0,0,.08); flex: none; }
+.ppg-lang-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ppg-note { font-size: 12px; color: #a3a3a3; text-align: center; margin: 24px 0 0; }
+
+/* -------------------------------------------------------------- stappen */
+.ppg-steps { display: flex; border-bottom: 1px solid #e5e5e5; margin: -24px -24px 24px; }
+.ppg-step {
+  flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 12px 8px; font-size: 14px; font-weight: 500;
+  color: #a3a3a3; border-bottom: 2px solid transparent;
+}
+.ppg-step-active { color: #047857; border-bottom-color: #059669; background: #f0fdf9; }
+.ppg-step-num {
+  width: 20px; height: 20px; border-radius: 999px;
+  background: #f5f5f5; color: #a3a3a3;
+  font-size: 12px; font-weight: 600;
+  display: inline-flex; align-items: center; justify-content: center; flex: none;
+}
+.ppg-step-active .ppg-step-num { background: #059669; color: #fff; }
+
+/* ------------------------------------------------------------- velden */
+.ppg-h2   { font-size: 18px; font-weight: 600; margin: 0 0 4px; }
+.ppg-text { font-size: 14px; color: #525252; margin: 0 0 20px; line-height: 1.5; }
+
+.ppg-label { display: block; font-size: 14px; font-weight: 500; margin: 0 0 6px; }
+.ppg-required { color: #ef4444; }
+.ppg-hint { font-size: 12px; color: #737373; margin: 6px 0 0; }
+
+.ppg-input {
+  width: 100%; border: 1px solid #d4d4d4; border-radius: 8px;
+  padding: 10px 14px; font-size: 14px; font-family: inherit;
+  background: #fff; color: #171717;
+}
+.ppg-input:focus { outline: none; border-color: #059669; box-shadow: 0 0 0 3px rgba(5,150,105,.12); }
+.ppg-textarea { resize: vertical; }
+.ppg-select {
+  appearance: none; -webkit-appearance: none; cursor: pointer;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23a3a3a3' viewBox='0 0 16 16'%3E%3Cpath d='M4.2 5.8 8 9.6l3.8-3.8 1.1 1.1L8 11.8 3.1 6.9z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 12px center;
+  padding-right: 36px;
+}
+
+/* ---------------------------------------------- soort locatie knoppen */
+.ppg-type-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 0 0 20px; }
+@media (max-width: 640px) { .ppg-type-row { grid-template-columns: 1fr; } }
+.ppg-type-btn {
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  border: 2px solid #e5e5e5; border-radius: 12px; background: #fff;
+  padding: 20px 12px; font-size: 14px; font-weight: 500; color: #404040;
+  cursor: pointer; transition: border-color .15s, background-color .15s;
+}
+.ppg-type-btn:hover { border-color: #d4d4d4; background: #fafafa; }
+.ppg-type-active { border-color: #059669 !important; background: #ecfdf5 !important; color: #065f46; }
+.ppg-type-icon { font-size: 24px; line-height: 1; }
+
+.ppg-note-box {
+  font-size: 14px; color: #525252;
+  background: #f0fdf9; border: 1px solid #d1fae5; border-radius: 8px;
+  padding: 12px 16px; margin: 0 0 20px;
+}
+
+/* ------------------------------------------------------------- upload */
+.ppg-upload {
+  width: 100%; display: flex; flex-direction: column; align-items: center; gap: 8px;
+  border: 2px dashed #d4d4d4; border-radius: 12px; background: #fff;
+  padding: 32px 16px; cursor: pointer; font-family: inherit;
+  transition: border-color .15s, background-color .15s;
+}
+.ppg-upload:hover { border-color: #10b981; background: #f0fdfa; }
+.ppg-upload-icon { font-size: 32px; color: #a3a3a3; line-height: 1; }
+.ppg-upload-main { font-size: 14px; font-weight: 500; color: #171717; }
+.ppg-upload-hint { font-size: 12px; color: #737373; }
+
+.ppg-files { list-style: none; margin: 12px 0 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.ppg-file {
+  display: flex; align-items: center; gap: 12px;
+  border: 1px solid #e5e5e5; border-radius: 8px; background: #fafafa;
+  padding: 8px 12px; font-size: 14px;
+}
+.ppg-file-name { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ppg-file-size { font-size: 12px; color: #a3a3a3; flex: none; }
+.ppg-file-remove {
+  border: 0; background: none; color: #a3a3a3; cursor: pointer;
+  font-size: 14px; padding: 4px; flex: none;
+}
+.ppg-file-remove:hover { color: #dc2626; }
+
+/* ------------------------------------------------------------ fouten */
+.ppg-error     { font-size: 12px; color: #dc2626; margin: 6px 0 0; }
+.ppg-warn      { font-size: 12px; color: #b45309; margin: 8px 0 0; }
+.ppg-error-bar {
+  margin-top: 16px; padding: 12px 16px;
+  border: 1px solid #fecaca; border-radius: 8px; background: #fef2f2;
+  color: #b91c1c; font-size: 14px;
+}
+
+/* ---------------------------------------------------------- navigatie */
+.ppg-nav {
+  display: flex; align-items: center; justify-content: space-between;
+  margin: 24px -24px -24px; padding: 16px 24px;
+  border-top: 1px solid #e5e5e5; background: #fafafa;
+  border-radius: 0 0 16px 16px;
+}
+.ppg-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  border: 0; border-radius: 8px; background: none;
+  padding: 10px 16px; font-size: 14px; font-weight: 500;
+  font-family: inherit; color: #404040; cursor: pointer;
+  transition: background-color .15s;
+}
+.ppg-btn:hover { background: #e5e5e5; }
+.ppg-btn:disabled { opacity: .4; cursor: not-allowed; }
+.ppg-btn-dark  { background: #171717; color: #fff; }
+.ppg-btn-dark:hover  { background: #404040; }
+.ppg-btn-primary { background: #059669; color: #fff; }
+.ppg-btn-primary:hover { background: #047857; }
+.ppg-btn-primary:disabled, .ppg-btn-dark:disabled { opacity: .6; }
+
+/* ---------------------------------------------------------------- klaar */
+.ppg-done { text-align: center; padding: 40px 24px; }
+.ppg-done .ppg-btn { margin-top: 20px; }
